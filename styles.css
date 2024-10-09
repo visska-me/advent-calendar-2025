@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --primary-color: #27203e;
-  --secondary-color: #0f1b11;
+  --secondary-color: #cd1010;
   --background-color: #1d1d1d;
   --text-color: white;
   --font-large: clamp(2rem, 5vw, 3.5rem);
@@ -51,10 +51,23 @@ a {
 .intro-text {
   font-size: var(--font-small);
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   line-height: 1.4;
   margin-left: auto;
   margin-right: auto;
+}
+
+.open-day-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 12px 50px;
+  font-size: var(--font-small);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  text-transform: uppercase;
 }
 
 .calendar {
@@ -84,6 +97,14 @@ a {
   color: white;
 }
 
+.calendar-item.active {
+  border: 3px solid var(--secondary-color); 
+}
+
+.calendar-item.active img {
+  content: url('images/img-new.jpg');
+}
+
 footer {
   text-align: center;
   background-color: var(--background-color);
@@ -106,8 +127,13 @@ footer p {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .open-day-button {
+    margin: 40px auto;
+  }
+
   .calendar {
     grid-template-columns: repeat(5, 1fr);
+    padding: 0 60px 30px;
   }
 
   .logo {
@@ -125,6 +151,10 @@ footer p {
 } 
 
 @media (min-width: 1025px) {
+  .open-day-button:hover {
+    background-color: var(--secondary-color);
+  }
+
   .calendar {
     grid-template-columns: repeat(5, 1fr);
     padding: 0 80px 50px;
